@@ -4,13 +4,17 @@ const Hero = () => {
   return (
     <header className="w-full flex justify-center items-center flex-col">
       <nav className="w-full flex justify-between items-center mb-10 pt-4">
-        <img src={logo} alt="Ada-7x" className="w-28 object-contain" />
+        <div className="flex gap-2 items-center cursor-pointer">
+          <img src={logo} alt="Ada-7x" className="w-7 object-contain pt-1p" />
+          <p className="font-bold logo text-zinc-700 text-[1.39rem]">ADA-7x</p>
+        </div>
+
         <button
           type="button"
           className="black_btn"
           onClick={() => window.open("https://github.com/Xeven777")}
         >
-          Github
+          My Github
         </button>
       </nav>
 
