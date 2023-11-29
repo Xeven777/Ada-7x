@@ -16,9 +16,14 @@ const Hero = () => {
 
       <h1 className="head_text">
         Summarize Articles with <br className="max-md:hidden" />
-        <span className="orange_gradient">OPEN AI GPT-4</span>
+        GPT-4 powered <br />
+        <span className="orange_gradient font-bold text-7xl">ADA-7x</span>
       </h1>
-      <h2 className="desc"> Simplify your articles down with Ada-7x, a powerful article summarizer powered by GPT-4.</h2>
+      <h2 className="desc">
+        {" "}
+        Simplify your articles down with Ada-7x, a powerful article summarizer
+        powered by GPT-4.
+      </h2>
     </header>
   );
 };

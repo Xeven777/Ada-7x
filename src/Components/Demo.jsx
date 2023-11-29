@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { copy, linkIcon, loader } from "../assets";
+import { copy, linkIcon, loader, tick } from "../assets";
 import { useLazyGetSummaryQuery } from "../servies/article";
 
 const Demo = () => {
@@ -9,6 +9,7 @@ const Demo = () => {
   });
   const [allArticles, setAllArticles] = useState([]);
   const [getSummary, { error, isFetching }] = useLazyGetSummaryQuery();
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const articlesFromLocalStorage = JSON.parse(
@@ -31,6 +32,14 @@ const Demo = () => {
       console.log(newArticle);
       localStorage.setItem("articles", JSON.stringify(updatedAllArticles));
     }
+  };
+
+  const handleCopy = (copyUrl) => {
+    setCopied(copyUrl);
+    navigator.clipboard.writeText(copyUrl);
+    setTimeout(() => {
+      setCopied(false);
+    }, 4000);
   };
 
   return (
@@ -70,9 +79,14 @@ const Demo = () => {
               }}
               className="link_card"
             >
-              <div className="copy_btn">
+              <div
+                className="copy_btn"
+                onClick={() => {
+                  handleCopy(article.url);
+                }}
+              >
                 <img
-                  src={copy}
+                  src={copied === article.url ? tick : copy}
                   alt="Copy"
                   className="w-[40%] h-[40%] object-contain"
                 />
@@ -101,11 +115,12 @@ const Demo = () => {
         ) : (
           article.summary && (
             <div className="flex flex-col gap-3">
-              <h2 className="text-3xl font-semibold font-satoshi">Article <span className="blue_gradient">Summary</span> :</h2>
+              <h2 className="text-3xl font-semibold font-satoshi">
+                Article <span className="blue_gradient">Summary</span> :
+              </h2>
               <p className="text-zinc-800 text-left text-lg font-inter">
                 {article.summary}
               </p>
-              
             </div>
           )
         )}

@@ -6,6 +6,10 @@ h1 {
   font-family: "Clash Display", sans-serif;
   font-weight: 600;
 }
+
+h1 span{
+  font-family: "Space Grotesk";
+}
 body {
   font-family: "Clash Grotesk", sans-serif;
 }
@@ -72,7 +76,6 @@ body {
   }
 }
 
-/* Tailwind Styles */
 
 .app {
   @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
@@ -83,7 +86,7 @@ body {
 }
 
 .head_text {
-  @apply mt-5 text-5xl leading-[1.15] text-black sm:text-6xl text-center tracking-tight;
+  @apply mt-5 text-4xl lg:text-6xl leading-[1.1] text-zinc-900 sm:text-6xl text-center tracking-tight;
 }
 
 .orange_gradient {
