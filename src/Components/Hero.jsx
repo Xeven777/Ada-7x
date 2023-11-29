@@ -19,7 +19,7 @@ const Hero = () => {
       </nav>
 
       <h1 className="head_text">
-        Summarize Articles with <br className="max-md:hidden" />
+        Summarize Articles with <br />
         GPT-4 powered <br />
         <span className="orange_gradient font-bold text-7xl">ADA-7x</span>
       </h1>
