@@ -24,9 +24,8 @@ const Hero = () => {
         <span className="orange_gradient font-bold text-7xl">ADA-7x</span>
       </h1>
       <h2 className="desc">
-        {" "}
-        Simplify your articles down with Ada-7x, a powerful article summarizer
-        powered by GPT-4.
+        Simplify your articles from any website with Ada-7x, a powerful article summarizer
+        powered by GPT-4. Just paste the link and get a summarized version of the article in few momments ;) 
       </h2>
     </header>
   );
